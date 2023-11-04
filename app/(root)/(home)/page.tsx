@@ -39,10 +39,8 @@ const page = async ({ searchParams }: Props) => {
         
         <section className="flex-center mt-6 w-full flex-col sm:mt-20">
         <Header
-          title="Resource"
-          query={searchParams?.query || ``}
-          category={searchParams?.category || ``}
-          />
+            query={searchParams?.query || ``}
+            category={searchParams?.category || ``} type={''}          />
         <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
           {resources?.length > 0 ? (
             resources.map((resource: any)=> (
@@ -52,6 +50,7 @@ const page = async ({ searchParams }: Props) => {
                 id={resource._id}
                 image={resource.image}
                 downloadNumber={resource.views}
+                downloadLink={resource.downloadLink}
               />
             ))
           ): (
@@ -75,6 +74,7 @@ const page = async ({ searchParams }: Props) => {
                   id={resource._id}
                   image={resource.image}
                   downloadNumber={resource.views}
+                  downloadLink={resource.downloadLink}
                 />
                 ))}
           </div>
